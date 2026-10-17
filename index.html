@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portofolio profesional Mastura – Lulusan D4 Teknik Informatika Politeknik Negeri Lhokseumawe. Spesialisasi pengembangan aplikasi, machine learning, dan pengolahan data.">
+    <title>Mastura · Portofolio Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --green-900: #052e16;
+            --green-800: #0b4a2a;
+            --green-700: #0b513f;
+            --green-600: #166534;
+            --green-400: #4ade80;
+            --green-300: #86efac;
+            --lime: #d9f99d;
+            --lime-dark: #a3e635;
+            --bg: #f0f7f2;
+            --bg2: #e8f3ec;
+            --text: #0f1f17;
+            --text-muted: #4b6355;
+            --white: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --border: rgba(11, 81, 63, 0.12);
+            --shadow: 0 4px 32px rgba(11, 81, 63, 0.10);
+            --shadow-lg: 0 12px 60px rgba(11, 81, 63, 0.18);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--green-700);
+            border-radius: 99px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(11, 81, 63, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -200px;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(217, 249, 157, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(240, 247, 242, 0.80);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--green-700);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .brand span {
+            color: var(--lime-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 7px 14px;
+            border-radius: 99px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-700);
+            background: rgba(11, 81, 63, 0.08);
+        }
+
+        .nav-cta {
+            background: var(--green-700) !important;
+            color: var(--white) !important;
+            padding: 7px 18px !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-800) !important;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 92%;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            min-height: calc(100vh - 64px);
+            display: flex;
+            align-items: center;
+            padding: 80px 0 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(11, 81, 63, 0.08);
+            border: 1px solid rgba(11, 81, 63, 0.15);
+            color: var(--green-700);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 99px;
+            margin-bottom: 22px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: var(--lime-dark);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.4);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(48px, 7vw, 78px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--green-700), var(--lime-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-meta span {
+            background: var(--lime);
+            color: var(--green-800);
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 99px;
+            font-size: 13px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--green-700);
+            color: var(--white);
+            box-shadow: 0 4px 18px rgba(11, 81, 63, 0.30);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-800);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(11, 81, 63, 0.38);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--green-700);
+            border: 2px solid var(--green-700);
+        }
+
+        .btn-outline:hover {
+            background: var(--green-700);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: rgba(11, 81, 63, 0.07);
+            color: var(--green-700);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(11, 81, 63, 0.14);
+            transform: translateY(-2px);
+        }
+
+        .photo-card {
+            position: relative;
+        }
+
+        .photo-card::before {
+            content: '';
+            position: absolute;
+            top: -16px;
+            right: -16px;
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--lime) 0%, var(--green-300) 100%);
+            z-index: 0;
+        }
+
+        .photo-wrap {
+            position: relative;
+            z-index: 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4/5;
+        }
+
+        .photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .photo-badge-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--green-700), var(--green-400));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .photo-badge-text strong {
+            display: block;
+            font-size: 14px;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .photo-badge-text span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--green-700);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .section-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(11, 81, 63, 0.08);
+            color: var(--green-700);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 5px 13px;
+            border-radius: 99px;
+            margin-bottom: 14px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 560px;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green-700), var(--lime-dark));
+            border-radius: 99px;
+            margin-bottom: 32px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.85;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .trait-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trait-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+            transition: transform 0.2s;
+        }
+
+        .trait-list li:hover {
+            transform: translateX(6px);
+        }
+
+        .trait-list li::before {
+            content: 'v';
+            color: var(--lime-dark);
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .edu-card {
+            background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
+            border-radius: 24px;
+            padding: 40px;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: rgba(217, 249, 157, 0.08);
+            border-radius: 50%;
+        }
+
+        .edu-school {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .edu-degree {
+            font-size: 16px;
+            opacity: 0.85;
+            margin-bottom: 4px;
+        }
+
+        .edu-meta {
+            font-size: 14px;
+            opacity: 0.65;
+        }
+
+        .ipk-badge {
+            background: rgba(217, 249, 157, 0.2);
+            border: 2px solid var(--lime);
+            border-radius: 18px;
+            padding: 20px 28px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ipk-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--lime);
+            line-height: 1;
+        }
+
+        .ipk-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 14px;
+        }
+
+        .skill-chip {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            text-align: center;
+            backdrop-filter: blur(6px);
+            transition: all 0.25s;
+            cursor: default;
+        }
+
+        .skill-chip:hover {
+            background: var(--green-700);
+            color: var(--white);
+            border-color: var(--green-700);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(11, 81, 63, 0.25);
+        }
+
+        .skill-icon {
+            font-size: 28px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(11, 81, 63, 0.25);
+        }
+
+        .project-card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(11, 81, 63, 0.06) 0%, rgba(217, 249, 157, 0.10) 100%);
+            border-color: rgba(11, 81, 63, 0.2);
+        }
+
+        .project-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--lime);
+            color: var(--green-800);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(11, 81, 63, 0.08);
+            color: var(--green-700);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--green-700);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            margin-top: auto;
+            transition: gap 0.2s;
+        }
+
+        .project-link:hover {
+            gap: 10px;
+        }
+
+        .exp-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 24px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .exp-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--green-700), var(--green-400));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .exp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .exp-period {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(11, 81, 63, 0.08);
+            color: var(--green-700);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 99px;
+            margin-bottom: 12px;
+        }
+
+        .exp-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 50%, var(--green-800) 100%);
+            border-radius: 32px;
+            padding: 70px 60px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background: rgba(217, 249, 157, 0.06);
+            border-radius: 50%;
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section p {
+            font-size: 17px;
+            opacity: 0.8;
+            max-width: 500px;
+            margin: 0 auto 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-btns {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-lime {
+            background: var(--lime);
+            color: var(--green-900);
+            box-shadow: 0 4px 20px rgba(217, 249, 157, 0.35);
+        }
+
+        .btn-lime:hover {
+            background: #ecfccb;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(217, 249, 157, 0.45);
+        }
+
+        .btn-white-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-white-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: white;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 4px 18px rgba(37,211,102,0.30);
+        }
+
+        .btn-wa:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37,211,102,0.40);
+        }
+
+        .btn-wa-contact {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.40);
+        }
+
+        .btn-wa-contact:hover {
+            background: #1ebe5d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(37,211,102,0.50);
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--green-700);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .fade-in-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .fade-in-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-card {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.featured {
+                grid-column: 1;
+            }
+
+            .edu-card {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 50px 30px;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+        }
+
+        @media print {
+
+            .navbar,
+            .contact-btns,
+            .btn {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .edu-card {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="brand">MASTURA<span>.</span></a>
+            <div class="nav-links">
+                <a href="#tentang">Tentang</a>
+                <a href="#pendidikan">Pendidikan</a>
+                <a href="#proyek">Proyek</a>
+                <a href="#keahlian">Keahlian</a>
+                <a href="#pengalaman">Pengalaman</a>
+                <a href="#kontak" class="nav-cta">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero" id="beranda">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge fade-in">Tersedia untuk Peluang Baru</div>
+                    <h1 class="fade-in fade-in-delay-1">
+                        Halo, saya<br>
+                        <span class="highlight">Mastura</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in fade-in-delay-1">Sarjana Terapan Teknik Informatika</p>
+                    <div class="hero-meta fade-in fade-in-delay-2">
+                        Politeknik Negeri Lhokseumawe &nbsp;&middot;&nbsp;
+                        <span>IPK 3,49</span>
+                    </div>
+                    <p class="fade-in fade-in-delay-2"
+                        style="margin-bottom:32px; max-width:520px; color:var(--text-muted); font-size:16px; line-height:1.8;">
+                        Lulusan D4 yang bersemangat di bidang pengembangan aplikasi, machine learning, dan pengolahan
+                        data. Siap berkontribusi dalam lingkungan kerja yang dinamis dan inovatif.
+                    </p>
+                    <div class="hero-actions fade-in fade-in-delay-3">
+                        <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+                        <a href="https://wa.me/6285189997053" target="_blank" class="btn btn-wa">&#128241; WhatsApp</a>
+                        <a href="https://www.linkedin.com/in/mastura-mastura-15b4632aa" target="_blank"
+                            class="btn btn-outline">LinkedIn &#8599;</a>
+                        <a href="https://github.com/masturagithut" target="_blank" class="btn btn-ghost">GitHub
+                            &#8599;</a>
+                    </div>
+                </div>
+
+                <div class="photo-card fade-in fade-in-delay-2">
+                    <div class="photo-wrap">
+                        <img src="foto.jpeg" alt="Foto Profil Mastura">
+                        <div class="photo-badge">
+                            <div class="photo-badge-icon">&#127891;</div>
+                            <div class="photo-badge-text">
+                                <strong>D4 Teknik Informatika</strong>
+                                <span>Politeknik Negeri Lhokseumawe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-row">
+            <div class="stat-card fade-in">
+                <div class="stat-number">3,49</div>
+                <div class="stat-label">Indeks Prestasi Kumulatif</div>
+            </div>
+            <div class="stat-card fade-in fade-in-delay-1">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Proyek Dikembangkan</div>
+            </div>
+            <div class="stat-card fade-in fade-in-delay-2">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Teknologi Dikuasai</div>
+            </div>
+        </div>
+
+        <section id="tentang">
+            <div class="section-chip">01 &middot; Profil</div>
+            <h2 class="section-title fade-in">Tentang Saya</h2>
+            <div class="divider"></div>
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <p>Saya adalah lulusan D4 Teknik Informatika dari Politeknik Negeri Lhokseumawe dengan IPK 3,49.
+                        Selama masa studi, saya mengembangkan ketertarikan yang kuat pada teknologi informasi, khususnya
+                        di bidang pengembangan aplikasi dan kecerdasan buatan.</p>
+                    <p>Proyek tugas akhir saya berfokus pada pengembangan Sistem Rekomendasi Komoditas Tanaman Pangan
+                        menggunakan metode LSTM. Saya juga memiliki pengalaman magang di BPS Kabupaten Aceh Utara yang
+                        memperkuat kemampuan analisis data dan kerja profesional saya.</p>
+                </div>
+                <ul class="trait-list fade-in fade-in-delay-1">
+                    <li>Teliti dan detail-oriented</li>
+                    <li>Bertanggung jawab dan disiplin tinggi</li>
+                    <li>Cepat belajar teknologi baru</li>
+                    <li>Kolaboratif dalam tim</li>
+                    <li>Berorientasi pada solusi</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="pendidikan">
+            <div class="section-chip">02 &middot; Pendidikan</div>
+            <h2 class="section-title fade-in">Riwayat Pendidikan</h2>
+            <div class="divider"></div>
+            <div class="edu-card fade-in">
+                <div>
+                    <div class="edu-school">Politeknik Negeri Lhokseumawe</div>
+                    <div class="edu-degree">D4 &middot; Teknik Informatika</div>
+                    <div class="edu-meta">Jurusan Teknologi Informasi dan Komputer &nbsp;&middot;&nbsp; 2022 &ndash;
+                        2026</div>
+                </div>
+                <div class="ipk-badge">
+                    <div class="ipk-number">3,49</div>
+                    <div class="ipk-label">IPK</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="keahlian">
+            <div class="section-chip">03 &middot; Kompetensi</div>
+            <h2 class="section-title fade-in">Keahlian &amp; Teknologi</h2>
+            <div class="divider"></div>
+            <p class="section-desc fade-in">Bidang dan teknologi yang saya kuasai dan minati.</p>
+            <div class="skills-grid">
+                <div class="skill-chip fade-in"><span class="skill-icon">&#128013;</span>Python</div>
+                <div class="skill-chip fade-in fade-in-delay-1"><span class="skill-icon">&#129504;</span>Machine
+                    Learning</div>
+                <div class="skill-chip fade-in fade-in-delay-1"><span class="skill-icon">&#128202;</span>Pengolahan Data
+                </div>
+                <div class="skill-chip fade-in fade-in-delay-2"><span class="skill-icon">&#9889;</span>FastAPI</div>
+                <div class="skill-chip fade-in fade-in-delay-2"><span class="skill-icon">&#9651;</span>Next.js</div>
+                <div class="skill-chip fade-in fade-in-delay-3"><span class="skill-icon">&#128310;</span>TypeScript
+                </div>
+                <div class="skill-chip fade-in fade-in-delay-3"><span class="skill-icon">&#128451;</span>Supabase</div>
+                <div class="skill-chip fade-in"><span class="skill-icon">&#128187;</span>Pengembangan Aplikasi</div>
+                <div class="skill-chip fade-in fade-in-delay-1"><span class="skill-icon">&#128203;</span>Administrasi
+                </div>
+            </div>
+        </section>
+
+        <section id="proyek">
+            <div class="section-chip">04 &middot; Proyek</div>
+            <h2 class="section-title fade-in">Proyek Unggulan</h2>
+            <div class="divider"></div>
+            <div class="project-grid">
+                <div class="project-card featured fade-in">
+                    <div class="project-tag">&#11088; Tugas Akhir</div>
+                    <h3>Sistem Rekomendasi Komoditas Tanaman Pangan</h3>
+                    <p>Pengembangan aplikasi rekomendasi komoditas tanaman pangan menggunakan metode Long Short-Term
+                        Memory (LSTM) dan basis pengetahuan agronomi untuk mendukung analisis kesesuaian komoditas
+                        berdasarkan kondisi wilayah secara akurat dan efisien.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Supabase</span>
+                    </div>
+                    <a class="project-link" href="https://komoditas-tanaman.vercel.app/rekomendasi"
+                        target="_blank">Lihat Demo Langsung &#8594;</a>
+                </div>
+
+                <div class="project-card fade-in fade-in-delay-1">
+                    <div class="project-tag">&#128187; Repositori</div>
+                    <h3>GitHub</h3>
+                    <p>Kunjungi repositori saya untuk melihat lebih banyak proyek, eksplorasi kode, dan kontribusi yang
+                        sedang saya kembangkan.</p>
+                    <a class="project-link" href="https://github.com/masturagithut"
+                        target="_blank">github.com/masturagithut &#8594;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="pengalaman">
+            <div class="section-chip">05 &middot; Pengalaman</div>
+            <h2 class="section-title fade-in">Pengalaman Profesional</h2>
+            <div class="divider"></div>
+            <div class="exp-card fade-in">
+                <div class="exp-icon">&#128202;</div>
+                <div>
+                    <div class="exp-title">BPS Kabupaten Aceh Utara</div>
+                    <div class="exp-period">Magang Profesional</div>
+                    <div class="exp-desc">Pengalaman magang di Badan Pusat Statistik Kabupaten Aceh Utara, mendapatkan
+                        wawasan langsung dalam pengelolaan data statistik, analisis data, serta proses administrasi dan
+                        dokumentasi di lingkungan instansi pemerintah.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <div class="contact-section fade-in" id="kontak">
+            <h2>Mari Terhubung &#128075;</h2>
+            <p>Saya terbuka terhadap peluang kerja, kolaborasi proyek, dan pengembangan profesional yang sesuai dengan
+                minat saya.</p>
+            <div class="contact-btns">
+                <a class="btn btn-wa-contact" href="https://wa.me/6285189997053" target="_blank">&#128241; WhatsApp</a>
+                <a class="btn btn-lime" href="https://www.linkedin.com/in/mastura-mastura-15b4632aa"
+                    target="_blank">&#128279; LinkedIn</a>
+                <a class="btn btn-white-outline" href="https://github.com/masturagithut" target="_blank">&#128187;
+                    GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2026 <a href="#">Mastura</a> &middot; Portofolio Profesional &middot; Dibuat dengan &#10084;&#65039;
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>
